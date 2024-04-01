@@ -1,0 +1,31 @@
+SQL Training Pre-preparation assignment
+
+Step 1: Install PostgreSQL
+- Download and install the latest version of PostgreSQL. you can find the installa<on files for 
+their specific opera<ng system on the official PostgreSQL website 
+(hBps://www.postgresql.org/download/).
+
+Step 2: Install DBeaver
+- Please install DBeaver, which is a popular and free mul<-database tool that provides a GUI 
+for working with databases. you can download it from the DBeaver website 
+(hBps://dbeaver.io/download/).
+
+Step 3: Sample Database
+- The Northwind database is used for training purposes in our training. You can download a 
+copy of the Northwind database for PostgreSQL from this GitHub repository: 
+hBps://github.com/pthom/northwind_psql
+
+Step 4: Restoring the Sample Database
+- Restore the sample database into your PostgreSQL installa<on using the `pg_restore` or 
+`psql` command-line tools. Please download necessary file or dump file from the 
+downloaded Northwind database repository.
+Here's an example of how to restore a PostgreSQL database from a dump file using the 
+`pg_restore` command:
+pg_restore -U username -d database_name path/to/dumpfile.sql
+Replace `username` with the PostgreSQL username, `database_name` with the desired 
+database name, and `path/to/dumpfile.sql` with the path to the dump file.
+
+Step 5: Verify Database ConnecDon in DBeaver
+- Create a new database connec<on in DBeaver to connect to restored PostgreSQL database. 
+provide the connec<on details such as the host, port, database name, username, and 
+password
