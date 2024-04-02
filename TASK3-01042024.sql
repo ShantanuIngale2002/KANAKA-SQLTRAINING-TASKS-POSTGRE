@@ -1,10 +1,10 @@
 -- 1. List all products that have never been ordered.
-explain analyze select product_name as unsoldProducts
+select product_name as unsoldProducts
 from products p
 left join order_details od on p.product_id=od.product_id
 where p.product_id is null;
 -- slower executing query below
---explain analyze select product_name as unsoldProducts
+-- select product_name as unsoldProducts
 --from products p 
 --where p.product_id not in (select product_id from order_details od);
 

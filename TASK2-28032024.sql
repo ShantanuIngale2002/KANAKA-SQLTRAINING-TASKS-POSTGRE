@@ -5,8 +5,7 @@ SELECT city,country FROM customers;
 SELECT COUNT(order_id) FROM orders WHERE order_date>='1997-1-1' AND order_date<='1997-12-31';
 
 -- 3. Calculate the total freight cost for the order with OrderID 10250.
--- SELECT SUM(freight) FROM orders WHERE order_id=10250;
-SELECT o.freight*count(od.order_id) FROM orders AS o JOIN order_details AS od ON o.order_id=od.order_id WHERE o.order_id=10250 GROUP BY o.order_id;
+select o.freight*count(od.order_id) from orders as o join order_details as od on o.order_id=od.order_id where o.order_id=10250 group by o.order_id;
 
 -- 4. Display the product name and unit price for the most expensive product in the database.
 SELECT product_name, unit_price FROM products WHERE unit_price=(SELECT MAX(unit_price) FROM products);
@@ -16,3 +15,6 @@ SELECT e.first_name ||' '|| e.last_name AS name, count(o.order_id) FROM employee
 
 -- 6. Find the top 3 customers based on the total amount they have spent on orders.
 SELECT c.company_name AS top3customers FROM customers AS c JOIN orders AS o ON c.customer_id=o.customer_id JOIN order_details as od ON o.order_id=od.order_id GROUP BY c.company_name ORDER BY SUM(od.unit_price*od.quantity) DESC LIMIT 3;
+
+
+
